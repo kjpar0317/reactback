@@ -1,14 +1,24 @@
+/*
+npm install mysql
+npm install cors
+
+*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+var cors = require('cors'); // Express에서 CORS 허용하기
 var dbPool = require('./lib/db_connect');
 
 var indexRouter = require('./routes/index');
 var boardRouter = require('./routes/board');
 
 var app = express();
+
+// CORS 설정
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
