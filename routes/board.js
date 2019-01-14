@@ -34,7 +34,7 @@ router.post('/write', function (req, res, next) {
   var salary = req.body.salary;
   
   if(name != null && country != null && city != null && salary != null) {
-    dbPool.query("INSERT INTO board (id, name, country, city, salary) VALUES (NEXTVAL(BOARDSEQ),?, ?, ?, ?)", [name,country,city,salary], function (data, error) {
+    dbPool.query("INSERT INTO board (name, country, city, salary) VALUES (?, ?, ?, ?)", [name,country,city,salary], function (data, error) {
       if(!error) {
         res.json({
            "code": 200,
