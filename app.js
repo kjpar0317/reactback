@@ -1,14 +1,17 @@
 /*
 npm install mysql
 npm install cors
-
+npm install body-parser
 */
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
+
+출처: http://lazydev.tistory.com/54 [Kern]
 var cors = require('cors'); // Express에서 CORS 허용하기
 var dbPool = require('./lib/db_connect');
 
@@ -29,9 +32,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/board', boardRouter);
+app.use('/board/write', boardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
