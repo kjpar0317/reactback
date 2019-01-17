@@ -15,3 +15,6 @@ npm install express --save
 
 #### body-parser : request body parser 라이브러리
 npm install body-parser
+
+#### cookie-parser : cookie사용 라이브러리
+npm install cookie-parser
