@@ -1,8 +1,3 @@
-/*
-npm install mysql
-npm install cors
-npm install body-parser
-*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
