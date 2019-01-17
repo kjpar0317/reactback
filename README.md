@@ -12,3 +12,6 @@ npm install cors
 
 #### express : express 서버 구축을 위한 라이브러리
 npm install express --save
+
+#### body-parser : request body parser 라이브러리
+npm install body-parser
